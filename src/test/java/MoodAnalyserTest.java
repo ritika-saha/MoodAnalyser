@@ -16,4 +16,13 @@ public class MoodAnalyserTest {
         String result=analyser.analyseMood();
         assertEquals("SAD", result);
     }
+
+    //test for happy mood or any mood
+    @ParameterizedTest
+    @ValueSource(strings = {"I am in happy mood", "I am in any mood"})
+    public void testHappyMood(String data){
+        MoodAnalyser analyser=new MoodAnalyser(data);
+        String result=analyser.analyseMood();
+        assertEquals("HAPPY", result);
+    }
 }
