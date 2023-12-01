@@ -19,7 +19,7 @@ public class MoodAnalyser {
         //exception handling with try catch block
         try{
 
-            if(mood.toLowerCase().contains("happy") || mood.toLowerCase().contains("any")){
+            if(mood == null || mood.toLowerCase().contains("happy") || mood.toLowerCase().contains("any")){
                 return "HAPPY";
             }else if(mood.toLowerCase().contains("sad")){
                 return "SAD";
