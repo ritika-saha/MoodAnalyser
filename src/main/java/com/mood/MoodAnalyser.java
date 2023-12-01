@@ -32,4 +32,9 @@ public class MoodAnalyser {
 
         }
     }
+
+     public enum MoodStatus{
+        HAPPY,
+        SAD
+    }
 }
