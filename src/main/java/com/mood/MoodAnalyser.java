@@ -14,21 +14,25 @@ public class MoodAnalyser {
         this.mood=data;
     }
 
-    public String analyseMood(){
+    public String analyseMood() throws MoodAnalyserException {
 
         //exception handling with try catch block
         try{
 
-            if(mood == null || mood.toLowerCase().contains("happy") || mood.toLowerCase().contains("any")){
-                return "HAPPY";
+            if(mood == null){
+                throw new MoodAnalyserException(MoodAnalyserErr.EMPTY_MOOD);
+            }
+            else if(mood.toLowerCase().contains("happy") || mood.toLowerCase().contains("any")){
+                return MoodStatus.HAPPY.toString();
             }else if(mood.toLowerCase().contains("sad")){
-                return "SAD";
-            }else{
-                throw new MoodAnalyserException("Exception occured! Don't know current mood");
+                return MoodStatus.SAD.toString();
+            }
+            else{
+                throw new MoodAnalyserException(MoodAnalyserErr.INVALID_MOOD);
             }
 
         }catch(MoodAnalyserException e){
-            return e.getMessage();
+            throw e;
 
         }
     }

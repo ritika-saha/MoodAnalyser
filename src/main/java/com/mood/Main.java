@@ -5,7 +5,7 @@ public class Main {
         System.out.println("--------------Welcome to Mood Analyzer Program------------");
         String mood="I am in happy mood";
         MoodAnalyser moodOb=new MoodAnalyser(mood);
-        mood=moodOb.analyseMood();
+       // mood=moodOb.analyseMood();
         System.out.println(mood);
     }
 }
