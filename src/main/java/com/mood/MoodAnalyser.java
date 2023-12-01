@@ -4,6 +4,12 @@ public class MoodAnalyser {
 
     public String mood;
 
+    //default constructor
+    public MoodAnalyser() {
+        this.mood = "";
+    }
+
+    //parameterized constructor
     public MoodAnalyser(String data){
         this.mood=data;
     }
