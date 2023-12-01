@@ -15,6 +15,8 @@ public class MoodAnalyser {
     }
 
     public String analyseMood(){
+
+        //exception handling with try catch block
         try{
 
             if(mood.toLowerCase().contains("happy") || mood.toLowerCase().contains("any")){
