@@ -19,7 +19,7 @@ public class MoodAnalyser {
         //exception handling with try catch block
         try{
 
-            if(mood == null){
+            if(mood == null || mood.isEmpty()){
                 throw new MoodAnalyserException(MoodAnalyserErr.EMPTY_MOOD);
             }
             else if(mood.toLowerCase().contains("happy") || mood.toLowerCase().contains("any")){

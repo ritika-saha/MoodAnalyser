@@ -49,4 +49,18 @@ public class MoodAnalyserTest {
 
 
     }
+
+    //testing for empty mood
+    @Test
+    public void testEmptyMood(){
+        String mood="";
+         MoodAnalyser analyser=new MoodAnalyser(mood);
+    MoodAnalyserException e=assertThrows(MoodAnalyserException.class, analyser::analyseMood);
+    assertEquals(MoodAnalyserErr.EMPTY_MOOD,e.getError());
+    assertEquals("Mood should not be empty or null", e.getMessage());
+
+
+    }
+
+
 }
